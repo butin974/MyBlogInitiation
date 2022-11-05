@@ -16,3 +16,16 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+
+#MyCgu-H1{
+    color:blue
+}
+#MyCgu-H2 {
+    color: forestgreen
+}
+#MyCgu-Text {
+    font-style: italic ;
+    color:brown
+}
