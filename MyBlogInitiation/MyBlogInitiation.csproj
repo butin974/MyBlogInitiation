@@ -10,4 +10,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MyBlogInitiation.Mocks\MyBlogInitiation.Mocks.csproj" />
+    <ProjectReference Include="..\MyBlogInitiation.Models\MyBlogInitiation.Models.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyBlogInitiation.Mocks;
+using MyBlogInitiation.Models;
+using MyBlogInitiation.ViewModels;
 
 namespace MyBlogInitiation.Controllers
 {
@@ -6,7 +9,12 @@ namespace MyBlogInitiation.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            // creer une liste d'articles en dur
+            var vm = new ArticlesViewModel
+            {
+                Articles = ArticlesMock.listArticles
+            };
+            return View(vm);
         }
 
         public IActionResult Stock()

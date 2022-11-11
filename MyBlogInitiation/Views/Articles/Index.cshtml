@@ -1,0 +1,41 @@
+﻿@using MyBlogInitiation.ViewModels
+
+   @*
+   Ca va typer l'objet Model
+   Rendre le model obligatoire
+   (dans le controleur on ne pourra pas faire return view) ??
+   *@
+
+@*On specifie le model a la vue*@
+@model ArticlesViewModel
+
+<h1> Liste des articles</h1>
+
+<i>TODO:mettre la liste des articles</i>
+
+<table class="table">
+    @foreach (var article in Model.Articles)
+    {
+        <tr>
+            <td>
+                @article.Id
+            </td>
+            <td>
+                @{
+                    var id = article.Id;
+                    if (id% 2==0)
+                    {
+                        <span>Id Paire</span>
+                    }
+                    else
+                    {
+                        <span>Id Impaire</span>
+                    }                          
+                }
+            </td>
+
+            <td>@article.Title</td>
+            <td>@article.Content</td>
+        </tr>
+    }
+</table>
