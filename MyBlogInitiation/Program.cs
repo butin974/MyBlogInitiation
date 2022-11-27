@@ -1,9 +1,17 @@
 global using MyBlogInitiation.ViewModels;
+using Microsoft.EntityFrameworkCore;
+using MyBlogInitiation.Repository.Context;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//ADD entyty Framwork
+builder.Services.AddDbContext<DbBlogContext>(options =>
+  options.UseSqlServer(builder.Configuration.GetConnectionString("BlogDbContext")));
+   // "BlogDbContext = chaine de connection dans appsetting.json
 
 var mvcBuilder = builder.Services.AddRazorPages();
 
@@ -22,12 +30,30 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    var context = services.GetRequiredService<DbBlogContext>();
+    context.Database.EnsureCreated();
+    // DbInitializer.Initialize(context);
+}
+
+
+
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
+
+
+
+
+
 
 app.MapControllerRoute(
     name: "default",
