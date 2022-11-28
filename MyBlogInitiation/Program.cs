@@ -11,7 +11,15 @@ builder.Services.AddControllersWithViews();
 //ADD entyty Framwork
 builder.Services.AddDbContext<DbBlogContext>(options =>
   options.UseSqlServer(builder.Configuration.GetConnectionString("BlogDbContext")));
-   // "BlogDbContext = chaine de connection dans appsetting.json
+// "BlogDbContext = chaine de connection dans appsetting.json
+
+//---------------------------------------------
+//Exemple UseInMemoryDatabas
+//builder.Services.AddDbContext<DbBlogContext>(options =>
+//      options.UseInMemoryDatabase("TestMemoryDatabase"));
+//---------------------------------------------
+
+
 
 var mvcBuilder = builder.Services.AddRazorPages();
 
