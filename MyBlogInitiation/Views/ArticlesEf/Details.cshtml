@@ -20,8 +20,20 @@
             @Html.DisplayNameFor(model => model.Content)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content)
+            @Html.Raw(Model.Content)
         </dd>
+
+      <!--
+        <dt class="col-sm-2">
+            Arobas! Html.DisplayNameFor(model => model.Available)"
+
+        </dt>
+        <dd class="col-sm-10">
+            Arobas! Html.DisplayFor(model => model.Available)
+        </dd>
+      -->
+
+
     </dl>
 </div>
 <div>
