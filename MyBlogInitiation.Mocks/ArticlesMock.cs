@@ -1,30 +1,64 @@
 ﻿using MyBlogInitiation.Models;
+using System.Net;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using static System.Net.Mime.MediaTypeNames;
+using System.Text.RegularExpressions;
 
 namespace MyBlogInitiation.Mocks
 {
-    public static class ArticlesMock
+    public  class ArticlesMock
     {
         public static readonly List<ArticleModel> listArticles = new List<ArticleModel>()
         {
-             new ArticleModel
+            new ArticleModel
                   {
-                     // Id=0,
-                      Title="Les objets connectes en 2022",
-                      Content="..."
+                      Id=0,
+                      Title="Les objets connectes en 2021",
+                      Content="...",
+                      Available=true
                   },
-                  new ArticleModel
+            new ArticleModel
                   {
-                      //Id=1,
+                      Id=1,
                       Title="Les objets connectes en 2023",
-                      Content="..."
+                      Content="...",
+                Available=true
+
                   },
-                  new ArticleModel
+            new ArticleModel
                   {
-                     // Id=2,
+                      Id=2,
                       Title="Les objets connectes en 2024",
-                      Content="..."
+                      Content="...",
+                      Available=true
                   },
         };
+
+
+        public static List<ArticleModel> GetMockForBDD()
+        {
+            var result = new List<ArticleModel>();
+          
+
+            foreach (ArticleModel Zob in listArticles)
+            {
+                var NewArticle = new ArticleModel();
+
+                NewArticle.Title = Zob.Title;
+                NewArticle.Content = Zob.Content;
+                NewArticle.Available = Zob.Available;   
+
+                result.Add(NewArticle); 
+            }
+            return result;
+        }
+
+       
+
+
+
+
     }
 }
 

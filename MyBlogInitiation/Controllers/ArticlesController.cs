@@ -31,6 +31,7 @@ namespace MyBlogInitiation.Controllers
         {
             var lstArticleMock = ArticlesMock.listArticles;
             // on ajoute les articles Mock
+            // _dbBlogContext.Articles.AddRange(ArticlesMock.listArticles);
             _dbBlogContext.Articles.AddRange(ArticlesMock.listArticles);
             // on sauvegarde 
             await _dbBlogContext.SaveChangesAsync();

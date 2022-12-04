@@ -28,9 +28,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Available)
+                </td>
+
+
               <!-- On supprime le texte au niveau de l'index'------------
               <td>
-                Arobas Html.DisplayFor(modelItem => item.Content)
+                @*Html.DisplayFor(modelItem => item.Content)*@
               </td>-->
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
