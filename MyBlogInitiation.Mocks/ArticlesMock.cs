@@ -13,26 +13,52 @@ namespace MyBlogInitiation.Mocks
         {
             new ArticleModel
                   {
-                      Id=0,
+                     // Id=0,
                       Title="Les objets connectes en 2021",
-                      Content="...",
+                      Content="2022 bonne année...",
                       Available=true
                   },
             new ArticleModel
                   {
-                      Id=1,
-                      Title="Les objets connectes en 2023",
-                      Content="...",
+                      //Id=1,
+                      Title="Les objets connectes en 2022",
+                      Content="2023 mauvaise année...",
                 Available=true
 
                   },
             new ArticleModel
                   {
-                      Id=2,
-                      Title="Les objets connectes en 2024",
-                      Content="...",
+                      //Id=2,
+                      Title="Les objets connectes en 2023",
+                      Content="2024 pas mieux...",
                       Available=true
                   },
+             new ArticleModel
+                  {
+                     // Id=0,
+                      Title="Les objets connectes en 2024",
+                      Content="2032 bonne année...",
+                      Available=true
+                  },
+            new ArticleModel
+                  {
+                      //Id=1,
+                      Title="Les objets connectes en 2025",
+                      Content="2033 mauvaise année...",
+                Available=true
+
+                  },
+            new ArticleModel
+                  {
+                      //Id=2,
+                      Title="Les objets connectes en 2026",
+                      Content="2034 pas mieux...",
+                      Available=true
+                  },
+
+
+
+
         };
 
 

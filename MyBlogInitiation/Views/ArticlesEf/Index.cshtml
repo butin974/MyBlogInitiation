@@ -18,19 +18,22 @@
             <!-- <th>On supprime le texte au niveau de l'index'------------
                 arobas! Html.DisplayNameFor(model => model.Content)
              </th>-->
+             <th>
+                 @Html.DisplayNameFor(model =>model.Available)
+             </th>
 
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+         @foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Available)
-                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Available)
+            </td>
 
 
               <!-- On supprime le texte au niveau de l'index'------------

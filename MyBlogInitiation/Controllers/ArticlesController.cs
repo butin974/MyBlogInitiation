@@ -39,6 +39,25 @@ namespace MyBlogInitiation.Controllers
             return RedirectToAction("Index");
         }
 
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null || _dbBlogContext.Articles == null)
+            {
+                return NotFound();
+            }
+
+            var articleModel =await _dbBlogContext.Articles.FirstOrDefaultAsync(article =>article.Id==id);
+          
+            if (articleModel == null || !articleModel.Available)
+            {
+                return NotFound();
+            }
+
+            return View(articleModel);
+        }
+
+
+
 
         public IActionResult Stock()
         {
