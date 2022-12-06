@@ -1,7 +1,7 @@
 global using MyBlogInitiation.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using MyBlogInitiation.Repository.Context;
-
+using MyBlogInitiation.Repository.DAL;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +18,9 @@ builder.Services.AddDbContext<DbBlogContext>(options =>
 //builder.Services.AddDbContext<DbBlogContext>(options =>
 //      options.UseInMemoryDatabase("TestMemoryDatabase"));
 //---------------------------------------------
+
+
+builder.Services.AddTransient<ArticlesPublicDAL>();
 
 
 
