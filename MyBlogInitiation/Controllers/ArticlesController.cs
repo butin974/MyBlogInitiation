@@ -2,13 +2,22 @@
 //using Microsoft.EntityFrameworkCore;
 using MyBlogInitiation.Mocks;
 using MyBlogInitiation.Models;
-using MyBlogInitiation.Repository.Context;
+//using MyBlogInitiation.Repository.Context;
 //using MyBlogInitiation.Repository.Context;
 using MyBlogInitiation.Repository.DAL;
-using MyBlogInitiation.ViewModels;
+//using MyBlogInitiation.ViewModels;
 
 namespace MyBlogInitiation.Controllers
 {
+
+    /** refactoring:
+      Creer la Dal dans le projet repository
+      Parametrer l'injection dans programcs (addtranscient)
+      injecter la dal ici dans le constructeur
+      Enlever toutes les occurences ici a _context ,en les remplacant par des appels au repo
+    */
+
+
     public class ArticlesController : Controller
         {
 
@@ -34,7 +43,7 @@ namespace MyBlogInitiation.Controllers
         }
 
 
-     /*   Deplacé dans dev Options controller
+     /* -----------  Deplacé dans dev Options controller
       *   public async Task <IActionResult> AddDataFromMock()
         {
             var lstArticleMock = ArticlesMock.listArticles;
@@ -45,13 +54,13 @@ namespace MyBlogInitiation.Controllers
             await _dbBlogContext.SaveChangesAsync();
             //  
             return RedirectToAction("Index");
-        }*/
+     }-----------------*/
 
         public async Task<IActionResult> Details(int? id)
         {
             //if (id == null || _dbBlogContext.Articles == null)
 
-                if (id == null)
+            if (id == null)
             {
                 return NotFound();
             }

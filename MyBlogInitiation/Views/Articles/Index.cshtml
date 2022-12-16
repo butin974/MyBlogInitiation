@@ -18,8 +18,8 @@
 <div class="allArticles">
     @foreach (var article in Model.Articles)
     {
-        if (article.Available)
-        {
+        //if (article.Available)
+        //{---(deja testé dans le repository)
         <div class="card" style="width: 18rem;">
             @*<img src="..." class="card-img-top" alt="...">*@
             <div class="card-body">
@@ -28,7 +28,7 @@
                 <a asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id" class="btn btn-primary">Lire plus</a>
             </div>
         </div>
-        }
+        //}
     }
 </div>
 
